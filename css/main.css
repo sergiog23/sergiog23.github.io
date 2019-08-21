@@ -1,12 +1,10 @@
-head {
-    color: #E6B0AA; 
-}
+
 
 body {
     margin: 60px auto;
     width: 70%;
-    color: #97ACE6;
-    background-color:#E6B0AA;
+    color: #BB8FCE;
+    background-color:#58D68D;
 }
 nav ul, footer ul {
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
