@@ -38,6 +38,7 @@
       window.onload = function() {
   // Month Day, Year Hour:Minute:Second, id-of-element-container
   countUpFromTime("July 26, 2020 00:00:00", 'countup1'); // ****** Change this line!
+  countUpFromTime("December 26, 2021 00:00:00", 'countup2'); // ****** Change this line!
 };
 function countUpFromTime(countFrom, id) {
   countFrom = new Date(countFrom).getTime();
@@ -145,8 +146,21 @@ function countUpFromTime(countFrom, id) {
           <li><p>
             <a href="https://sergiog23.github.io/ilikeyou.html">Why I like you </a> </li>
           <li><a href="https://sergiog23.github.io/july7.html">July 7</a></li>
+          <li><a href="https://sergiog23.github.io/diary.html">Unfinished Diary</a></li>
           
         </ul>
+        <div class="countup" id="countup2">
+          <span class="timeel days">00</span>
+          <span class="timeel timeRefDays">days</span>
+          <span class="timeel hours">00</span>
+          <span class="timeel timeRefHours">hours</span>
+          <span class="timeel minutes">00</span>
+          <span class="timeel timeRefMinutes">minutes</span>
+          <span class="timeel seconds">00</span>
+          <span class="timeel timeRefSeconds">seconds</span>
+        </div>
+        <p class="lead text-muted">This is an active clock that tells you how many days we have been together </p>
+        <p>
         
        
         </p>
