@@ -6,6 +6,9 @@
   }
   body {
     background-color: #cd202d;
+    text-align: center; /* Center-align text within the body */
+    color: #ffffff;
+    padding-top: 50px; /* Add padding to the top of the body */
   }
   .container {
     background-color: #1b1b1b;
@@ -54,7 +57,9 @@
     gap: 2em;
   }
   #btn-start,
-  #btn-pause {
+  #btn-pause,
+  #increase,
+  #decrease {
     padding: 1em 2em;
     border-radius: 0.5em;
     cursor: pointer;

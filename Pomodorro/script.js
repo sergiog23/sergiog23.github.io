@@ -13,6 +13,19 @@ let paused = true;
 let minCount = 24;
 time.textContent = `${minCount + 1}:00`;
 
+document.getElementById('increase').addEventListener('click', function() {
+  time.textContent = `${minCount + 1}:00`;// Increase by 1 minute (60 seconds)
+  //updateTimerDisplay();
+});
+
+// Function to decrease the timer duration
+document.getElementById('decrease').addEventListener('click', function() {
+  if (time > 60) { // Ensure timer duration doesn't go below 1 minute
+    time -= 60; // Decrease by 1 minute (60 seconds)
+     // updateTimerDisplay();
+  }
+});
+
 const appendZero = (value) => {
   value = value < 10 ? `0${value}` : value;
   return value;
