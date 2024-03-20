@@ -6,6 +6,8 @@ let startBtn = document.getElementById("btn-start");
 let reset = document.getElementById("btn-reset");
 let pause = document.getElementById("btn-pause");
 let time = document.getElementById("time");
+let increase = document.getElementById("increase");
+let decrease = document.getElementById("decrease");
 let set;
 let active = "focus";
 let count = 59;
@@ -15,6 +17,8 @@ time.textContent = `${minCount + 1}:00`;
 
 document.getElementById('increase').addEventListener('click', function() {
   time.textContent = `${minCount + 1}:00`;// Increase by 1 minute (60 seconds)
+  minCount += 1;
+  time.value +=1;
   //updateTimerDisplay();
 });
 
@@ -102,6 +106,8 @@ startBtn.addEventListener("click", () => {
   pause.classList.add("show");
   startBtn.classList.add("hide");
   startBtn.classList.remove("show");
+  increase.classList.remove("hide");
+  decrease.classList.remove("hide");
   if (paused) {
     paused = false;
     time.textContent = `${appendZero(minCount)}:${appendZero(count)}`;
