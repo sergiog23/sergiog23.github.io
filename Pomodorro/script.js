@@ -16,7 +16,7 @@ let minCount = 24;
 time.textContent = `${minCount + 1}:00`;
 
 document.getElementById('increase').addEventListener('click', function() {
-  time.textContent = `${minCount + 1}:00`;// Increase by 1 minute (60 seconds)
+  time.textContent = `${minCount + 1}:${time.value}`;// Increase by 1 minute (60 seconds)
   minCount += 1;
   time.value +=1;
   //updateTimerDisplay();
@@ -24,6 +24,9 @@ document.getElementById('increase').addEventListener('click', function() {
 
 // Function to decrease the timer duration
 document.getElementById('decrease').addEventListener('click', function() {
+  time.textContent = `${minCount - 1}:${count}`;
+  minCount -= 1;
+  time.value -=1;
   if (time > 60) { // Ensure timer duration doesn't go below 1 minute
     time -= 60; // Decrease by 1 minute (60 seconds)
      // updateTimerDisplay();
