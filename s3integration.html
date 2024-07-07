@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>S3 Integration</title>
+</head>
+<body>
+  <input type="file" id="fileInput">
+  <button onclick="uploadFile()">Upload</button>
+  <button onclick="listFiles()">List Files</button>
+  <button onclick="downloadFile()">Download File</button>
+  <button onclick="deleteFile()">Delete File</button>
+
+  <script>
+    async function uploadFile() {
+      const fileInput = document.getElementById('fileInput');
+      const file = fileInput.files[0];
+      const formData = new FormData();
+      formData.append('file', file);
+
+      const response = await fetch('/upload', {
+        method: 'POST',
+        body: formData,
+      });
+
+      const result = await response.text();
+      console.log(result);
+    }
+
+    async function listFiles() {
+      const response = await fetch('/files');
+      const files = await response.json();
+      console.log(files);
+    }
+
+    async function downloadFile() {
+      const fileName = prompt('Enter file name to download:');
+      const response = await fetch(`/download/${fileName}`);
+      const fileContent = await response.text();
+      console.log(fileContent);
+    }
+
+    async function deleteFile() {
+      const fileName = prompt('Enter file name to delete:');
+      const response = await fetch(`/delete/${fileName}`, {
+        method: 'DELETE',
+      });
+      const result = await response.text();
+      console.log(result);
+    }
+  </script>
+</body>
+</html>
